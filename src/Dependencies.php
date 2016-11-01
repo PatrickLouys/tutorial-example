@@ -15,4 +15,14 @@ $injector->define('Http\HttpRequest', [
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
 
+$injector->alias('Example\Template\Renderer', 'Example\Template\MustacheRenderer');
+
+$injector->define('Mustache_Engine', [
+    ':options' => [
+        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates', [
+            'extension' => '.html',
+        ]),
+    ],
+]);
+
 return $injector;
