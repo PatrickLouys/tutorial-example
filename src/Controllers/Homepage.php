@@ -2,9 +2,9 @@
 
 namespace Example\Controllers;
 
+use Example\Template\FrontendRenderer;
 use Http\Request;
 use Http\Response;
-use Example\Template\Renderer;
 
 class Homepage
 {
@@ -15,7 +15,7 @@ class Homepage
     public function __construct(
         Request $request,
         Response $response,
-        Renderer $renderer
+        FrontendRenderer $renderer
     ) {
         $this->request = $request;
         $this->response = $response;
